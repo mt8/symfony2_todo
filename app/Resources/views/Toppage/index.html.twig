@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <div>
+            <p>ようこそTODOへ</p>
+            <hr />
+            <ul>
+            {% for task in tasks %}
+                <li>{{ task.name }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
