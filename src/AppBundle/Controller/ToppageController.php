@@ -12,17 +12,9 @@ class ToppageController extends Controller
 	 */
 	public function indexAction()
 	{
-		$tasks = [
-			[
-				'name' => 'あれ', "limit_date" => '2017/03/31', "status" => '0'
-			],
-			[
-				'name' => 'これ', "limit_date" => '2017/03/01', "status" => '1'
-			],
-			[
-				'name' => 'それ', "limit_date" => '2017/02/28', "status" => '2'
-			],			
-		];
+		$em = $this->getDoctrine()->getManager();
+		$taskRepository = $em->getRepository('AppBundle:task');
+		$tasks = $taskRepository->findBy([], ['limitDate' => 'ASC']);
 		return $this->render('Toppage/index.html.twig',['tasks' => $tasks]);
 	}
 }

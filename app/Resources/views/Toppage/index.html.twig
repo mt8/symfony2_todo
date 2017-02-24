@@ -16,7 +16,7 @@
                 {% for task in tasks %}
                     <tr>
                         <td>{{ task.name }}</td>
-                        <td>{{ task.limit_date }}</td>
+                        <td>{{ task.limitDate|date('Y年m月d日') }}</td>
                         <td>{{ status_list[task.status] }}</td>
                     </tr>
                 {% endfor %}
