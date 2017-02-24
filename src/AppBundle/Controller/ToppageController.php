@@ -14,13 +14,13 @@ class ToppageController extends Controller
 	{
 		$tasks = [
 			[
-				'name' => 'あれ'
+				'name' => 'あれ', "limit_date" => '2017/03/31', "status" => '0'
 			],
 			[
-				'name' => 'それ'
+				'name' => 'これ', "limit_date" => '2017/03/01', "status" => '1'
 			],
 			[
-				'name' => 'これ'
+				'name' => 'それ', "limit_date" => '2017/02/28', "status" => '2'
 			],			
 		];
 		return $this->render('Toppage/index.html.twig',['tasks' => $tasks]);
