@@ -9,6 +9,7 @@
                         <th>タスク名</th>
                         <th>期限</th>
                         <th>状態</th>
+                        <th>編集</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,6 +19,7 @@
                         <td>{{ task.name }}</td>
                         <td>{{ task.limitDate|date('Y年m月d日') }}</td>
                         <td>{{ status_list[task.status] }}</td>
+                        <td><a href="{{ path("app_editpage_index", {"id": task.id} ) }}">編集</a></td>
                     </tr>
                 {% endfor %}
                 </tbody>
