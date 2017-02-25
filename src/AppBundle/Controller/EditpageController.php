@@ -41,6 +41,10 @@ class EditpageController extends Controller
 			$em->flush();
 			return $this->redirect($this->generateUrl('app_toppage_index'));
 		}
+		return $this->render('Editpage/index.html.twig',[
+			'form' => $form->createView(),
+			'task' => $task,
+		]);
 		
 	}
 	

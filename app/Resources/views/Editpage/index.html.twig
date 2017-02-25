@@ -8,15 +8,24 @@
                 <tbody>
                     <tr>
                         <th>タスク名</th>
-                        <td>{{ form_widget(form.name) }}</td>
+                        <td>
+                            {{ form_widget(form.name) }}
+                            {{ form_errors(form.name) }}
+                        </td>
                     </tr>       
                     <tr>
                         <th>期限日</th>
-                        <td>{{ form_widget(form.limitDate) }}</td>
+                        <td>
+                            {{ form_widget(form.limitDate) }}
+                            {{ form_errors(form.limitDate) }}
+                        </td>
                     </tr>       
                     <tr>
                         <th>状態</th>
-                        <td>{{ form_widget(form.status) }}</td>
+                        <td>
+                            {{ form_widget(form.status) }}
+                            {{ form_errors(form.status) }}                            
+                        </td>
                     </tr>               
                 </tbody>
             </table>

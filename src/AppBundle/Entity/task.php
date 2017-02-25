@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * task
@@ -25,6 +26,8 @@ class task
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max=30)
      */
     private $name;
 
@@ -32,6 +35,7 @@ class task
      * @var \DateTime
      *
      * @ORM\Column(name="limit_date", type="datetime")
+	 * @Assert\NotBlank()
      */
     private $limitDate;
 
@@ -39,6 +43,8 @@ class task
      * @var string
      *
      * @ORM\Column(name="status", type="string", length=1)
+	 * @Assert\NotBlank()
+	 * @Assert\Regex(pattern="/[0|1|2]/")
      */
     private $status;
 
