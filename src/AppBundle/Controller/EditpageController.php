@@ -48,7 +48,7 @@ class EditpageController extends Controller
 	{
 		return $this->createFormBuilder($task)
 				->add('name','text')
-				->add('limitDate','date')
+				->add('limitDate','date', ['format' => 'yMd'])
 				->add('status','choice',['choices' => [ '未','中','済' ]])
 				->add('submit', 'submit',['label'=>'保存'])
 				->getForm();
